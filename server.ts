@@ -1,5 +1,5 @@
 import express, { Application } from 'express';
-import AuthRouter from './Routes/Auth'
+import Router from './Routes'
 import { Mongoose } from 'mongoose'
 import "dotenv/config";
 
@@ -11,7 +11,7 @@ const MONGO_URI: string | undefined = process.env.MONGO_URI || "";
 
 app.use(express.json());
 
-app.use('/auth', AuthRouter)
+app.use("/",Router)
 
 
 app.listen(PORT, async () => {
